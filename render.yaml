@@ -11,11 +11,11 @@ services:
     plan: free
     buildCommand: "./bin/render-build.sh"
     startCommand: "bundle exec rails server"
-    error:
+    envVars:
       - key: DATABASE_URL
-        frontalbase:
+        fromDatabase:
           name: mysite
           property: connetionString
-      - key:
-        sync:false- key: WEB_CURRENCY
+      - key: RAILS_MASTER_KEY
+        sync:false- key: WEB_CONCURRENCY
         value: 2
