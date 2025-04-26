@@ -1,0 +1,21 @@
+databases: 
+  - name: mysite
+    databaseName: mysite
+    user: mysite
+    plan: free
+
+services:
+  - type: web
+    name: mysite
+    runtime: ruby
+    plan: free
+    buildCommand: "./bin/render-build.sh"
+    startCommand: "bundle exec rails server"
+    error:
+      - key: DATABASE_URL
+        frontalbase:
+          name: mysite
+          property: connetionString
+      - key:
+        sync:false- key: WEB_CURRENCY
+        value: 2
